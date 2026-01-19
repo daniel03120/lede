@@ -2,6 +2,16 @@
 #
 # Copyright (C) 2020 Tobias Maedel
 
+define Device/radxa_e25
+  DEVICE_VENDOR := Radxa
+  DEVICE_MODEL := E25
+  DEVICE_DTS := rk3568-radxa-e25
+  UBOOT_DEVICE_NAME := radxa-e25-rk3568
+  IMAGE/sysupgrade.img.gz := boot-common | boot-script | pine64-img | gzip | append-metadata
+  DEVICE_PACKAGES := kmod-ata-ahci-dwc kmod-r8125-rss
+endef
+TARGET_DEVICES += radxa_e25
+
 define Device/advantech_rsb4810
   DEVICE_VENDOR := Advantech
   DEVICE_MODEL := RSB4810
